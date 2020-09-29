@@ -22,9 +22,7 @@ function App() {
     let formData = new FormData();
     formData.append("file", file)
     console.log("form data", formData);
-    //axios.post('/uploadpdf', file, {}).then((res) => console.log("res", res));
-    // console.log("formData.keys", formData.keys());
-    // console.log("formData.values", formData.values());
+\
     axios({
       method: "post",
       url: "/uploadpdf",

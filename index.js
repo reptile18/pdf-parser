@@ -30,10 +30,6 @@ app.post('/uploadpdf', (req,res) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.json("Hello World");
-});
-
 app.listen(port, () => {
   console.log(`listening on port: ${port}`);
 });

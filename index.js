@@ -1,7 +1,6 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
-const functions = require('firebase-functions');
 
 const fs = require('fs');
 const pdf = require('pdf-parse');
@@ -34,5 +33,3 @@ app.post('/uploadpdf', (req,res) => {
 app.listen(port, () => {
   console.log(`listening on port: ${port}`);
 });
-
-exports.app = functions.https.onRequest(app);

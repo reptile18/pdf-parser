@@ -9,7 +9,6 @@ const app = express();
 const port = 3001;
 
 app.use(fileUpload());
-app.use(express.static('public'));
 app.use(cors());
 
 if (process.env.NODE_ENV === "production") {

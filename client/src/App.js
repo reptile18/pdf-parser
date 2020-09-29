@@ -1,17 +1,14 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { Form, FormGroup, Label, Input, Button, Container, Row, Col } from 'reactstrap';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const [file, setFile] = useState({});
   const fileEl = useRef();
-  const [progress, setProgess] = useState(0); // progess bar
   const [text, setText] = useState("");
 
   function onFileChange(e) {
-    setProgess(0);
     const file = e.target.files[0];
     console.log("file", file);
     setFile(e.target.files[0]);

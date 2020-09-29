@@ -1,6 +1,5 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
-const cors = require('cors');
 
 const fs = require('fs');
 const pdf = require('pdf-parse');
@@ -9,7 +8,6 @@ const app = express();
 const port = 3001;
 
 app.use(fileUpload());
-app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

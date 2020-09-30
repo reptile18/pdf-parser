@@ -1,5 +1,6 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const cors = require('cors')
 
 const fs = require('fs');
 const pdf = require('pdf-parse');
@@ -8,12 +9,14 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(fileUpload());
+app.use(express.static('public'));
+app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.post('/api/uploadpdf', (req,res) => {
+app.post('/uploadpdf', (req,res) => {
 
   if (!req.files) {
     return res.status(500).send({msg: "file not found"});

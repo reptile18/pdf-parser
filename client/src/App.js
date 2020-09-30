@@ -25,7 +25,7 @@ function App() {
 
     axios({
       method: "post",
-      url: "/uploadpdf",
+      url: "/api/uploadpdf",
       data: formData
     }).then((res) => {
       console.log("res", res);

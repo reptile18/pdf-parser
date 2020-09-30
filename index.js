@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.post('/uploadpdf', (req,res) => {
+app.post('/api/uploadpdf', (req,res) => {
 
   if (!req.files) {
     return res.status(500).send({msg: "file not found"});
